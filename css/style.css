@@ -16,44 +16,70 @@ body {
     padding: 21px 8px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
 }
 
 .sub__title {
     font-size: inherit;
     font-weight: inherit;
     text-align: center;
-    margin: 4px 0px;
+    margin: 12px 0px;
 }
 
-.input__wrapper {
+.form__wrapper {
     position: relative;
 }
 .input {
-    padding: 12px;
+    padding: 12px 45px 12px 12px;
     border: 1px solid #989898;
     border-radius: 6px;
     width: 100%;
 }
+.input.invalid{
+    border: 1px solid #ff0000;
+}
 
-.checkbox__wrapper {
+.btn {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    border: none;
+    background-color: transparent;
+}
+.btn:hover {
+    cursor: pointer;
+}
+.btn__plus {
+    top: calc(50% - 9px);
+    right: 13px;
+    background-image: url('../img/plus-icon.svg');
+}
+.btn__close {
+    top: 13px;
+    right: 13px;
+    background-image: url('../img/close-icon.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.task__wrapper {
     padding: 12px 45px 12px 12px;
     border: 1px solid #989898;
     border-radius: 6px;
     position: relative;
+    margin-top: 8px;
 }
 
-.checkbox__custom {
+.task__checkbox-custom {
     position: absolute;
     opacity: 0;
     z-index: -9999;
 }
-
-.checkbox__custom+label {
+.task__checkbox-custom+.task__description {
     display: flex;
-    /* width: 370px; */
+    width: 100%;
+    overflow-wrap: anywhere;
 }
-.checkbox__custom+label::before {
+.task__checkbox-custom+.task__description::before {
     content: '';
     display: block;
     width: 21px;
@@ -61,18 +87,14 @@ body {
     border: 1px solid #998899;
     border-radius: 50%;
     box-sizing: border-box;
-    /* flex-grow: 0; */
     flex-shrink: 0;
     margin-right: 12px;
 }
-
-.checkbox__custom:checked+label::before {
+.task__checkbox-custom:checked+.task__description::before {
     padding: 2px;
     background-color: #C4C4C4;
     background-clip: content-box;
 }
-
-.checkbox__wrapper + .checkbox__custom:checked {
-    background-color: #989898;
+.task__checked {
+    background-color: #F4F4F4;
 }
-
