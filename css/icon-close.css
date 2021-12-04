@@ -1,0 +1,30 @@
+.icon__close {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    transform: rotate(45deg);
+}
+.icon__close:hover {
+    cursor: pointer;
+}
+.icon__close::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background-color: #998899;
+    top: 50%;
+}
+.icon__close::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: #998899;
+    top: 0;
+    left: 50%;
+}

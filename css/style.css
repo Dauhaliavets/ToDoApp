@@ -10,7 +10,7 @@ body {
 }
 
 .main__screen {
-    background-color: rgba(62, 122, 114, 0.322);
+    background-color: #ffffff;
     width: 476px;
     margin: 0 auto;
     padding: 21px 8px;
@@ -35,75 +35,9 @@ body {
     border-radius: 6px;
     width: 100%;
 }
-/* =========================   ICON PLUS   ========================== */
-.icon__plus {
-    width: 18px;
-    height: 18px;
-    background-color: greenyellow;
-    position: absolute;
-    top: calc(50% - 9px);
-    right: 13px;
-}
-.icon__plus:hover {
-    cursor: pointer;
-}
-.icon__plus::before {
-    content: '';
-    display: block;
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    background-color: #998899;
-    top: 50%;
-}
-.icon__plus::after {
-    content: '';
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 1px;
-    background-color: #998899;
-    top: 0;
-    left: 50%;
-}
-/* =================================================================== */
-/* =========================   ICON CLOSE   ========================== */
-.icon__close {
-    width: 18px;
-    height: 18px;
-    background-color: greenyellow;
-    position: absolute;
-    top: 13px;
-    right: 13px;
-    transform: rotate(45deg);
-}
-.icon__close:hover {
-    cursor: pointer;
-}
-.icon__close::before {
-    content: '';
-    display: block;
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    background-color: #998899;
-    top: 50%;
-}
-.icon__close::after {
-    content: '';
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 1px;
-    background-color: #998899;
-    top: 0;
-    left: 50%;
-}
-/* =================================================================== */
-
 
 .checkbox__wrapper {
-    padding: 12px 45px;
+    padding: 12px 45px 12px 12px;
     border: 1px solid #989898;
     border-radius: 6px;
     position: relative;
@@ -114,20 +48,22 @@ body {
     opacity: 0;
     z-index: -9999;
 }
+
 .checkbox__custom+label {
-    /* display: flex; */
-    width: 370px;
+    display: flex;
+    /* width: 370px; */
 }
 .checkbox__custom+label::before {
     content: '';
-    display: inline-block;
+    display: block;
     width: 21px;
     height: 21px;
     border: 1px solid #998899;
     border-radius: 50%;
     box-sizing: border-box;
-    flex-grow: 1;
-    /* margin-right: -33px; */
+    /* flex-grow: 0; */
+    flex-shrink: 0;
+    margin-right: 12px;
 }
 
 .checkbox__custom:checked+label::before {
@@ -136,4 +72,7 @@ body {
     background-clip: content-box;
 }
 
+.checkbox__wrapper + .checkbox__custom:checked {
+    background-color: #989898;
+}
 
